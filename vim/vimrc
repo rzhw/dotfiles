@@ -1,0 +1,44 @@
+call pathogen#infect()
+
+let g:ruby_path=":C:\ruby193\bin"
+
+set backupdir=$TEMP,$TMP,.
+set directory=$TEMP,$TMP,.
+
+set number      " Line numbers
+set ruler       " Show current line number and char
+set backspace=2 " Conventional backspace behaviour
+
+syntax on
+filetype plugin indent on
+
+" Block cursor for Cygwin Vim
+let &t_ti.="\e[1 q"
+let &t_SI.="\e[5 q"
+let &t_EI.="\e[1 q"
+let &t_te.="\e[0 q"
+
+set tabstop=4 shiftwidth=4 smarttab
+set autoindent smartindent
+
+autocmd FileType c set expandtab " For CSE
+autocmd BufEnter *.nxc setf nqc | set cindent
+
+if has("gui_running")
+  set guioptions-=m
+  set guioptions-=T
+
+  command MS set guioptions+=m
+  command MH set guioptions-=m
+
+  let g:molokai_original=1
+  colorscheme molokai
+
+  if has("gui_gtk2")
+    set guifont=Inconsolata\ 11
+  elseif has("gui_win32")
+    set guifont=Consolas:h10:cANSI
+  endif
+else
+  colorscheme torte
+endif
