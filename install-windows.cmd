@@ -7,8 +7,9 @@ IF %ERRORLEVEL% EQU 0 (
 
 	:: ======= VIM =======
 	del "%USERPROFILE%\.vimrc"
-	:: We need to use a hard link otherwise Vim doesn't pick it up
-	mklink /H "%USERPROFILE%\.vimrc" "%CD%\vim\vimrc"
+	mklink /H "%USERPROFILE%\.vimrc" "%CD%\vim\vimrc" &:: Hard link needed
+	rmdir /S /Q "%USERPROFILE%\vimfiles"
+	mklink /J "%USERPROFILE%\vimfiles" "%CD%\vim\vim"
 ) ELSE (
 	echo This script needs to be run as administrator!
 )
