@@ -1,0 +1,22 @@
+[
+	{ "keys": ["ctrl+u"], "command": "vi_scroll_lines",
+		"args": {"forward": false},
+		"context": [{"key": "setting.command_mode"}]
+	},
+
+	{ "keys": ["ctrl+d"], "command": "vi_scroll_lines",
+		"args": {"forward": true},
+		"context": [{"key": "setting.command_mode"}]
+	}
+	/*{ "keys": ["ctrl+f"], "command": "set_motion", "args": {
+		"motion": "move",
+		"motion_args": {"by": "pages", "forward": true, "extend": true }},
+		"context": [{"key": "setting.command_mode"}]
+	},
+
+	{ "keys": ["ctrl+b"], "command": "set_motion", "args": {
+		"motion": "move",
+		"motion_args": {"by": "pages", "forward": false, "extend": true }},
+		"context": [{"key": "setting.command_mode"}]
+	}*/
+]
