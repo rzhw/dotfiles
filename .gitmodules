@@ -1,0 +1,3 @@
+[submodule "vim/vim/bundle/powerline"]
+	path = vim/vim/bundle/powerline
+	url = git://github.com/Lokaltog/vim-powerline.git
