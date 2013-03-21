@@ -8,6 +8,5 @@
 	"ignored_packages":
 	[
 	],
-	"overlay_scroll_bars": "enabled",
-	"vintage_start_in_command_mode": true
+	"overlay_scroll_bars": "enabled"
 }
