@@ -16,11 +16,10 @@ set laststatus=2
 syntax on
 filetype plugin indent on
 
-set tabstop=4 shiftwidth=4 smarttab
+set tabstop=4 shiftwidth=4 smarttab expandtab
 set autoindent smartindent
 
-autocmd FileType c set expandtab " For CSE
-autocmd BufEnter *.nxc setf nqc | set cindent
+autocmd FileType rb,erb set tabstop=2 shiftwidth=2
 
 " Cygwin-specific settings
 if has("win32unix")
