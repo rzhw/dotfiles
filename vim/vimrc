@@ -19,6 +19,8 @@ filetype plugin indent on
 set tabstop=4 shiftwidth=4 smarttab expandtab
 set autoindent smartindent
 
+set iminsert=0 " Don't switch my IME mode from alpha
+
 autocmd FileType rb,erb set tabstop=2 shiftwidth=2
 
 " Cygwin-specific settings
