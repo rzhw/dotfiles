@@ -18,10 +18,10 @@ if (!(Test-Administrator)) {
     Break
 }
 
-# Sublime Text 2
-$userpackages = [Environment]::GetFolderPath("ApplicationData") + "\Sublime Text 2\Packages\User"
+# Sublime Text 3
+$userpackages = [Environment]::GetFolderPath("ApplicationData") + "\Sublime Text 3\Packages\User"
 Remove-DirOrJunc $userpackages
-mklink /J $userpackages "%CD%\sublime2\User"
+mklink /J $userpackages "%CD%\sublime3\User"
 
 # Vim
 $vimrc = [Environment]::GetFolderPath("UserProfile") + "\.vimrc"
