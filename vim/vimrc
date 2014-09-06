@@ -8,7 +8,8 @@ set directory=$TEMP,$TMP,.
 set number      " Line numbers
 set ruler       " Show current line number and char
 set backspace=2 " Conventional backspace behaviour
-set scrolloff=3
+set scrolloff=3 " Keep some padding
+set incsearch   " Search while typing
 
 set encoding=utf-8
 set laststatus=2
