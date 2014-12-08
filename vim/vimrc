@@ -22,7 +22,7 @@ set autoindent smartindent
 
 set iminsert=0 " Don't switch my IME mode from alpha
 
-autocmd FileType rb,erb set tabstop=2 shiftwidth=2
+autocmd Filetype ruby,eruby setlocal tabstop=2 shiftwidth=2
 
 " Cygwin-specific settings
 if has("win32unix")
