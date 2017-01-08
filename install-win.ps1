@@ -18,15 +18,38 @@ if (!(Test-Administrator)) {
     Break
 }
 
-# Sublime Text 3
-$userpackages = [Environment]::GetFolderPath("ApplicationData") + "\Sublime Text 3\Packages\User"
-Remove-DirOrJunc $userpackages
-mklink /J $userpackages "%CD%\sublime3\User"
+# Needed for Chocolatey
+Set-ExecutionPolicy Bypass
 
-# Vim
+Install-Package nuget -Provider Bootstrap
+Install-Package chocolatey -Provider Bootstrap
+
+# Apps - Development
+Install-Package git -Provider chocolatey # TODO: Switch to GitHub
+#Install-Package vim -Provider chocolatey
+Install-Package sublimetext3 -Provider chocolatey
+
+# Apps - Utilities
+Install-Package 7zip -Provider chocolatey
+
+# Config - Git
+git config --global credential.helper wincred
+
+# Config - Vim
 $vimrc = [Environment]::GetFolderPath("UserProfile") + "\.vimrc"
 $vimfiles = [Environment]::GetFolderPath("UserProfile") + "\vimfiles"
-Remove-Item $vimrc
+if (Test-Path $vimrc) {
+    Remove-Item $vimrc
+}
 mklink /H $vimrc "%CD%\vim\vimrc" # Hard link needed
-Remove-DirOrJunc $vimfiles
+if (Test-Path $vimfiles) {
+    Remove-DirOrJunc $vimfiles
+}
 mklink /J $vimfiles "%CD%\vim\vim"
+
+# Config - Sublime Text 3
+$userpackages = [Environment]::GetFolderPath("ApplicationData") + "\Sublime Text 3\Packages\User"
+if (Test-Path $userpackages) {
+    Remove-DirOrJunc $userpackages
+}
+mklink /J $userpackages "%CD%\sublime3\User"
