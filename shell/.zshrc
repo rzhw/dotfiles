@@ -55,10 +55,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-source ~/powerlevel9k/powerlevel9k.zsh-theme
-ZSH_THEME='powerlevel9k/powerlevel9k'
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir rbenv)
-
 # Local stuff
 if [ -f ~/.zshrc.local ]; then
     . ~/.zshrc.local
