@@ -1,7 +1,7 @@
 # Run with: copybara copy.bara.sky --folder-dir .
 
 core.workflow(
-    name = "default",
+    name = "copypasta",
     origin = git.github_origin(
       url = "https://github.com/baitisj/copypasta.git",
       ref = "62752ac0df1bbfe7cfbfa416c7dcfc7121abf450",
@@ -14,5 +14,22 @@ core.workflow(
     authoring = authoring.pass_thru("Copybara <>"),
     transformations = [
         core.move("", "third_party/copypasta")
+    ],
+)
+
+core.workflow(
+    name = "airline",
+    origin = git.github_origin(
+      url = "https://github.com/vim-airline/vim-airline.git",
+      ref = "799e5e028fc48f8035cabef1eb92b02a2d52cbfa",
+    ),
+    destination = git.destination(
+      url = "https://github.com/rzhw/dotfiles",
+      push = "main"
+    ),
+    destination_files = glob(["third_party/vim-airline/**"]),
+    authoring = authoring.pass_thru("Copybara <>"),
+    transformations = [
+        core.move("", "third_party/vim-airline")
     ],
 )
