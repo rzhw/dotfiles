@@ -14,6 +14,6 @@ then
 fi
 
 echo "* Put this in .bashrc:"
-echo "alias pbcopy='python $SCRIPTPATH/bin/copypasta/copypasta.py'"
+echo "alias pbcopy='python $SCRIPTPATH/third_party/copypasta/copypasta.py'"
 
 echo "* Done!"

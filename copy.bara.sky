@@ -1,0 +1,18 @@
+# Run with: copybara copy.bara.sky --folder-dir .
+
+core.workflow(
+    name = "default",
+    origin = git.github_origin(
+      url = "https://github.com/baitisj/copypasta.git",
+      ref = "62752ac0df1bbfe7cfbfa416c7dcfc7121abf450",
+    ),
+    destination = git.destination(
+      url = "https://github.com/rzhw/dotfiles",
+      push = "main"
+    ),
+    destination_files = glob(["third_party/copypasta/**"]),
+    authoring = authoring.pass_thru("Copybara <>"),
+    transformations = [
+        core.move("", "third_party/copypasta")
+    ],
+)
