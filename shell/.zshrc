@@ -63,3 +63,8 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir rbenv)
 if [ -f ~/.zshrc.local ]; then
     . ~/.zshrc.local
 fi
+
+# Starship
+if type "starship" > /dev/null; then
+    eval "$(starship init zsh)"
+fi
