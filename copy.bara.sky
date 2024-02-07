@@ -33,3 +33,20 @@ core.workflow(
         core.move("", "third_party/vim-airline")
     ],
 )
+
+core.workflow(
+    name = "ctrlp",
+    origin = git.github_origin(
+      url = "https://github.com/kien/ctrlp.vim.git",
+      ref = "b5d3fe66a58a13d2ff8b6391f4387608496a030f",
+    ),
+    destination = git.destination(
+      url = "https://github.com/rzhw/dotfiles",
+      push = "main"
+    ),
+    destination_files = glob(["third_party/ctrlp.vim/**"]),
+    authoring = authoring.pass_thru("Copybara <>"),
+    transformations = [
+        core.move("", "third_party/ctrlp.vim")
+    ],
+)
