@@ -50,3 +50,20 @@ core.workflow(
         core.move("", "third_party/ctrlp.vim")
     ],
 )
+
+core.workflow(
+    name = "html5.vim",
+    origin = git.github_origin(
+      url = "https://github.com/othree/html5.vim.git",
+      ref = "abaf4f8a829bd01cc460eb63768debc7c28a6ff5",
+    ),
+    destination = git.destination(
+      url = "https://github.com/rzhw/dotfiles",
+      push = "main"
+    ),
+    destination_files = glob(["third_party/html5.vim/**"]),
+    authoring = authoring.pass_thru("Copybara <>"),
+    transformations = [
+        core.move("", "third_party/html5.vim")
+    ],
+)
