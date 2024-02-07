@@ -67,3 +67,20 @@ core.workflow(
         core.move("", "third_party/html5.vim")
     ],
 )
+
+core.workflow(
+    name = "nerdtree",
+    origin = git.github_origin(
+      url = "https://github.com/preservim/nerdtree",
+      ref = "153041ac939502746e5a24468910eb7214a3f593",
+    ),
+    destination = git.destination(
+      url = "https://github.com/rzhw/dotfiles",
+      push = "main"
+    ),
+    destination_files = glob(["third_party/nerdtree/**"]),
+    authoring = authoring.pass_thru("Copybara <>"),
+    transformations = [
+        core.move("", "third_party/nerdtree")
+    ],
+)
